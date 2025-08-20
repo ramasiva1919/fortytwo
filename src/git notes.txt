@@ -1,0 +1,9 @@
+git status
+git init
+git status
+git add.
+git commit -m "message"
+[[git remote add origin https://github.com/ramasiva1919/fortytwo.git
+git branch -M main
+git push -u origin main]]----this is to create git repostory then master  will come
+git checkout -b branchname
