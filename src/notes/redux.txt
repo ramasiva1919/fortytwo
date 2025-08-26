@@ -1,0 +1,33 @@
+
+const initialState = {
+    clients: {data: []},
+    client: {},
+    isLoading: false,
+    error: null,
+};
+
+// Slice
+const clientSlice = createSlice({
+    name: 'clients',
+    initialState,
+    reducers: {
+        clearError: (state) => {
+            state.error = null;
+        },
+    },
+    extraReducers: (builder) => {
+        builder
+            // Fetch all clients
+            .addCase(fetchClients.pending, (state) => {
+                state.isLoading = true;
+                state.error = null;
+            })
+.addCase(createOrUpdateClientContact.fulfilled, (state, action) => {
+                state.isLoading = false;
+                console.log(action.payload);
+                const contacts = [...state.client.contacts, action.payload];
+                state.client = {
+                    ...state.client,
+                    contacts: contacts
+                };
+            })
