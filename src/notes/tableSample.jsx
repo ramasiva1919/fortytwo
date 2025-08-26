@@ -10,7 +10,7 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from 'react-router-dom';
-
+// import ClientContacts from './contactDetails'
 
 const rows = [{
     id:1,
@@ -48,7 +48,8 @@ export default function BasicTable() {
   };
   //  navigate(`/user/${rowData.id}`);
   return (
-    <TableContainer >
+   
+   <div><TableContainer >
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -86,5 +87,8 @@ export default function BasicTable() {
         </TableBody>
       </Table>
     </TableContainer>
+    
+      {/* <ClientContacts /> */}
+  </div>
   );
 }

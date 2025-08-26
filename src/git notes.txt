@@ -7,3 +7,16 @@ git commit -m "message"
 git branch -M main
 git push -u origin main]]----this is to create git repostory then master  will come
 git checkout -b branchname
+git branch
+git add.
+git commit -m "git notes"
+git push origin first branch
+in git hub compare and pull request
+create pull request
+in companies we dont merge ,merge pull request
+git stash(i a changes)
+git checkout main
+git pull origin main
+git checkout firstbranch
+git rebase main 
+git stash pop

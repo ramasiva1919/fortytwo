@@ -5,6 +5,8 @@ import BasicTable from './notes/tableSample';
 import TableIdTwo from './notes/tableTwo'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProfilePictureUploader from './notes/ProfilePicUpload'
+import MaterialRadioButtons from './notes/clientForm'
+import DynamicForm from './notes/dynamicForm'
 import './App.css'
 
 function App() {
@@ -42,7 +44,12 @@ function App() {
         />
 
         {/* Separate page for TableIdTwo */}
+        
         <Route path="/tableidtwo" element={<TableIdTwo />} />
+                <Route path="/client" element={<MaterialRadioButtons />} />
+                                <Route path="/dynamic" element={<DynamicForm />} />
+
+
         <Route path="/user/:id" element={<TableIdTwo />} />
                 <Route path="/profilepic" element={<ProfilePictureUploader />} />
 

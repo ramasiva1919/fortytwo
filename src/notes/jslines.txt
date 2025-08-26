@@ -1,0 +1,31 @@
+ data={[...client.contacts || [], {
+                                            name: client.firstName,
+                                            email: client.email,
+                                            phoneNumber: client.phoneNumber,
+                                            relationship: 'self'
+                                        }]}----data in table 
+-- <EvanChip title={'Status'} value={<>{client.status?.title} <EvanButton sx={{padding: 0}} variant={'text'}
+                                                                                                       onClick={() => handleDialogOpen('clientStatusModelOpen')}>Edit</EvanButton></>}></EvanChip>    
+3 {client.depositCollected &&
+                                    <EvanChip title={'Deposit Collected'} value={`$ ${client.depositCollected}`}/>
+                                }
+                                                                                                           
+4 <EvanChip value={client.diagnosis?.map(x => x.title)?.join(", ") ?? '-'}
+                                          title={`Primary Diagnosis`}/>
+5      <EvanChip value={client.hearingImpaired ? 'YES' : 'NO'} title={`Hearing Impaired`}/>
+6        <EvanChip title={'Date of Birth'} value={`${dobFormat(client.dob)}`}/>
+7       <EvanChip title={'Transferring Help'}
+   value={filter(client.transferringHelp)?.map(x => x.title)?.join(", ") || '-'}/> 
+8   <EvanChip value={client.petOwner?.map(x => x.title)?.join(", ") || 'None'}
+                                          title={`Client Have Pets`}/>
+9     {isDialogOpen('AddContactDialog') &&
+                <AddContactDialog
+                    clientId={clientId}
+                    id={getDialogData('AddContactDialog')?.id}
+                    onSubmit={() => console.log}
+                    onClose={() => handleDialogClose('AddContactDialog')}
+                    open={isDialogOpen('AddContactDialog')}/>
+            }
+
+
+                                                            
