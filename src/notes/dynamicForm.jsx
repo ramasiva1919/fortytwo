@@ -55,9 +55,7 @@ const DynamicForm = () => {
   };
 
   const handleSelectChange = (event) => {
-    const {
-      target: { value },
-    } = event;
+    const { target: { value },} = event;
     setSelectedClientTypes(typeof value === 'string' ? value.split(',') : value);
     setErrors((prev) => ({ ...prev, clientTypes: value.length === 0 ? 'Client Type is required' : '' }));
   };
@@ -149,6 +147,11 @@ const DynamicForm = () => {
               .map((id) => clientTypesOptions.find((option) => option.id === id)?.name)
               .join(', ')
           }
+  //         renderValue={(selectedIds) => {
+  // const selectedNames = selectedIds.map((id) => {
+  //   const match = clientTypesOptions.find((option) => option.id === id);
+  //   return match ? match.name : '';
+  // });
         >
           {clientTypesOptions.map((type) => (
             <MenuItem key={type.id} value={type.id}>
